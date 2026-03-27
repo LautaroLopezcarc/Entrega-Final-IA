@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclaje Urbano | Metamorfosis Urbana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i data-lucide="leaf"></i>
+                <span>MetamorfosisUrbana</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+            <nav class="navbar" id="navbar">
+                <a href="#inicio">Inicio</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#mapa">Mapa</a>
+                <a href="#guia">Guía</a>
+                <a href="#productos">Productos</a>
+                <a href="#comunidad">Comunidad</a>
+                <a href="#futuro">Futuro</a>
+                <a href="#documentacion">IA Lab</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container grid-2-cols">
+                <div class="hero-content">
+                    <h1>Transforma tus residuos.<br><span>Transforma tu ciudad.</span></h1>
+                    <p>Conecta con los puntos de reciclaje más cercanos y aprende a clasificar en segundos. Hacer tu
+                        parte por un entorno urbano limpio y sostenible nunca fue tan simple.</p>
+                    <div class="hero-cta">
+                        <a href="#mapa" class="btn btn-primary">Ubicar Puntos Limpios <i data-lucide="map-pin"></i></a>
+                        <a href="#guia" class="btn btn-outline">Aprender a Clasificar <i
+                                data-lucide="book-open"></i></a>
+                    </div>
+                </div>
+                <div class="img-col hero-image-placeholder">
+                    <!-- IMAGE 2: The modern city park recycling facility -->
+                    <img src="img/hero.jpg" alt="Instalación de reciclaje moderno y verde"
+                        class="hero-img-real text-center"
+                        onerror="this.src='https://via.placeholder.com/800x800?text=Guarda+la+imagen+como+img/hero.jpg'">
+                    <div class="glass-card decor-card-1">
+                        <i data-lucide="recycle" class="text-green"></i>
+                        <span>+500 Vecinos activos</span>
+                    </div>
+                    <div class="glass-card decor-card-2">
+                        <i data-lucide="leaf" class="text-green"></i>
+                        <span>Equilibrio Eco-Urbano</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Proceso Section -->
+        <section id="proceso" class="proceso-section light-bg">
+            <div class="container">
+                <div class="grid-2-cols reverse">
+                    <div class="desc-col">
+                        <h2>El Proceso: De Residuo a Recurso</h2>
+                        <p>Nuestra planta de clasificación inteligente separa y procesa los materiales de manera
+                            eficiente, preparando cada elemento para su segunda vida en la industria. Este es el corazón
+                            de la Metamorfosis Urbana.</p>
+                    </div>
+                    <div class="img-col">
+                        <!-- IMAGE 1: The split composition (raw aluminum vs plastic pellets) -->
+                        <img src="img/proceso.jpg" alt="Proceso de transformación" class="rounded-img shadow-lg"
+                            onerror="this.src='https://via.placeholder.com/800x600?text=Guarda+la+imagen+como+img/proceso.jpg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa Section (Visual Mockup) -->
+        <section id="mapa" class="mapa-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mapa de Puntos Limpios</h2>
+                    <p>Encuentra el lugar ideal para cada material.</p>
+                </div>
+
+                <div class="map-mockup-container glass-panel">
+                    <div class="map-sidebar">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" placeholder="¿Qué quieres reciclar? (ej. Pilas, Cartón)">
+                        </div>
+                        <div class="filters">
+                            <button class="filter-badge active">Todos</button>
+                            <button class="filter-badge">Plástico</button>
+                            <button class="filter-badge">Cartón</button>
+                            <button class="filter-badge">Vidrio</button>
+                            <button class="filter-badge">Pilas</button>
+                        </div>
+                        <div class="locations-list" id="locations-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="map-visual">
+                        <div class="map-grid"></div>
+                        <div class="map-pin" style="top: 30%; left: 40%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin active" style="top: 50%; left: 60%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin" style="top: 70%; left: 20%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin" style="top: 20%; left: 80%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin" style="top: 85%; left: 55%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin" style="top: 45%; left: 15%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+                        <div class="map-pin" style="top: 60%; left: 85%;"><i data-lucide="map-pin"></i>
+                            <div class="pulse"></div>
+                        </div>
+
+                        <div class="mockup-note">
+                            Mapa Visual Interactivo. Diseño Base.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guía Section -->
+        <section id="guia" class="guia-section light-bg">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Guía de Clasificación</h2>
+                    <p>Conoce qué y cómo separar, rápido y fácil.</p>
+                </div>
+
+                <div class="guia-grid">
+                    <div class="guia-card">
+                        <div class="card-icon bg-yellow"><i data-lucide="package"></i></div>
+                        <h3>Papel y Cartón</h3>
+                        <p>Cajas, hojas, envases de papel.</p>
+                        <span class="card-action">Ver tips <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <div class="guia-card">
+                        <div class="card-icon bg-blue"><i data-lucide="glass-water"></i></div>
+                        <h3>Vidrios</h3>
+                        <p>Botellas y frascos limpios y secos.</p>
+                        <span class="card-action">Ver tips <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <div class="guia-card">
+                        <div class="card-icon bg-green"><i data-lucide="bottle-water"></i></div>
+                        <h3>Plásticos</h3>
+                        <p>Envases PET, tapitas, bolsas.</p>
+                        <span class="card-action">Ver tips <i data-lucide="arrow-right"></i></span>
+                    </div>
+                    <div class="guia-card">
+                        <div class="card-icon bg-red"><i data-lucide="battery"></i></div>
+                        <h3>Peligrosos</h3>
+                        <p>Pilas, baterías y electrónicos.</p>
+                        <span class="card-action">Ver tips <i data-lucide="arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Productos Section -->
+        <section id="productos" class="productos-section">
+            <div class="container">
+                <div class="grid-2-cols">
+                    <div class="desc-col">
+                        <h2>El Resultado Final</h2>
+                        <p>Comprueba cómo el diseño de alta fidelidad se fusiona con la sostenibilidad. Sillas,
+                            auriculares y productos cotidianos nacen del reciclaje urbano, creados íntegramente de
+                            nuestros propios residuos locales demostrando una utilidad y estética inigualables.</p>
+                    </div>
+                    <div class="img-col">
+                        <!-- IMAGE 3: The products display (chair, headphones) -->
+                        <img src="img/productos.jpg" alt="Productos hechos de material reciclado"
+                            class="rounded-img shadow-lg border-white"
+                            onerror="this.src='https://via.placeholder.com/800x600?text=Guarda+la+imagen+como+img/productos.jpg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Comunidad / Impacto Section -->
+        <section id="comunidad" class="comunidad-section">
+            <div class="container">
+                <div class="grid-2-cols reverse">
+                    <div class="desc-col">
+                        <span class="tag">Únete a la Acción</span>
+                        <h2>Impacto Ciudadano</h2>
+                        <p>El diseño y la tecnología construyen la plataforma, pero la comunidad hace el cambio.
+                            Deposita tus envases en nuestros contenedores inteligentes repartidos por la ciudad y súmate
+                            al movimiento.</p>
+                        <a href="#" class="btn btn-outline border-white text-white mt-3 bg-green"
+                            style="border-color:white; color:white;">Sumarme al Impacto</a>
+                    </div>
+                    <div class="img-col">
+                        <!-- IMAGE 5: Citizen with smart bin -->
+                        <img src="img/impacto.jpg" alt="Uso ciudadano del contenedor inteligente"
+                            class="rounded-img shadow-lg border-white"
+                            onerror="this.src='https://via.placeholder.com/800x600?text=Guarda+la+imagen+como+img/impacto.jpg'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Futuro Section -->
+        <section id="futuro" class="futuro-section light-bg">
+            <div class="container text-center">
+                <h2>Visión a Largo Plazo: La Ciudad Circular</h2>
+                <p class="mb-4" style="max-width: 600px; margin: 0 auto 30px;">Un vistazo a nuestro futuro: ciudades
+                    hiperconectadas donde los materiales fluyen en corredores verdes y nuestra arquitectura está viva
+                    gracias a Metamorfosis Urbana.</p>
+                <!-- IMAGE 4: Circular futuristic city -->
+                <img src="img/futuro.jpg" alt="Futuro urbano circular" class="rounded-img shadow-lg"
+                    style="max-height: 500px;"
+                    onerror="this.src='https://via.placeholder.com/1200x500?text=Guarda+la+imagen+como+img/futuro.jpg'">
+            </div>
+        </section>
+
+        <!-- 6. Audio Himno Section -->
+        <section id="himno" class="himno-section">
+            <div class="container text-center">
+                <div class="section-header">
+                    <h2>Himno: Metamorfosis Urbana</h2>
+                    <p>La banda sonora de nuestra transformación.</p>
+                </div>
+                <div class="audio-card glass-panel p-4 mt-4" style="max-width: 600px; margin: 0 auto; padding: 40px;">
+                    <i data-lucide="music"
+                        style="width: 48px; height: 48px; color: var(--color-primary); margin-bottom: 20px;"></i>
+                    <audio controls style="width: 100%;">
+                        <source src="audio/reciclar.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="mt-3" style="font-style: italic; color: var(--color-secondary-light);">"Separar hoy es
+                        elegir un mejor mañana"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IA Lab / Documentación -->
+        <section id="documentacion" class="ia-lab-section">
+            <div class="container">
+                <div class="ia-lab-intro">
+                    <h2>IA Lab: Documentación del Proyecto</h2>
+                    <p>Esta plataforma ha implementado tecnologías de Inteligencia Artificial como un catalizador del
+                        diseño. Explora las instrucciones (prompts) que le dieron vida y cuerpo a 'Metamorfosis Urbana'.
+                    </p>
+                </div>
+
+                <div class="tabs-container glass-panel mt-4">
+                    <div class="tabs-header">
+                        <button class="tab-btn" data-tab="textos"><i data-lucide="file-text"></i> Textos
+                            (Gemini)</button>
+                        <button class="tab-btn active" data-tab="imagenes"><i data-lucide="image"></i> Imágenes
+                            (NightCafe)</button>
+                        <button class="tab-btn" data-tab="audio"><i data-lucide="headphones"></i> Audio (Sunno)</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <!-- Pestaña Textos -->
+                        <div class="tab-pane" id="tab-textos">
+                            <h3>Generación de Textos e Ideas</h3>
+                            <p class="tab-desc">Consulta los prompts base para la arquitectura web, copies, redes y
+                                documentación, utilizados en las fases tempranas del IA Lab.</p>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>1. Arquitectura de Información</h4>
+                                <div class="badge">Prompt del Usuario</div>
+                                <p class="prompt-text">"Actúa como un Arquitecto de Información Senior especializado en
+                                    plataformas de sostenibilidad. Diseña la estructura y el mapa de sitio (Sitemap)
+                                    para una web de 'Reciclaje Urbano'. La navegación debe ser intuitiva y educativa.
+                                    Define las secciones clave: Inicio (con impacto visual), 'Mapa de Puntos Limpios',
+                                    'Guía de Clasificación', 'IA Lab' (Documentación) y 'Comunidad'. Explica la
+                                    jerarquía de contenidos para que un ciudadano promedio encuentre dónde reciclar en
+                                    menos de 3 clics."</p>
+                                <div class="badge bg-green-light mt-2">Respuesta IA</div>
+                                <div class="response-text">
+                                    <p>Propuse una estructura plana (Flat Architecture) donde la funcionalidad principal
+                                        está a un clic desde el inicio. Niveles base: Home, Mapa interactivo, Guía
+                                        visual rápida, Comunidad e IA Lab para transparencia y metodología.</p>
+                                </div>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>2. Diseño Visual y Experiencia</h4>
+                                <div class="badge">Prompt del Usuario</div>
+                                <p class="prompt-text">"Actúa como un Diseñador UI/UX con enfoque en Diseño Biofílico y
+                                    Minimalismo Urbano. Define el sistema de diseño para la web de Reciclaje Urbano.
+                                    Proporciona una paleta de colores que combine tonos orgánicos (verdes y tierras) con
+                                    tonos industriales modernos (grises de concreto o azules acero). Sugiere tipografías
+                                    legibles y elementos de interfaz (iconografía de residuos, tarjetas de información)
+                                    que transmitan limpieza, orden y modernidad tecnológica."</p>
+                                <div class="badge bg-green-light mt-2">Respuesta IA</div>
+                                <div class="response-text">
+                                    <p>Sistema implementado con paleta principal: Verde Salvia Claro (#6B9071) y Gris
+                                        Concreto (#8D99AE). Tipografías: Outfit para encabezados e Inter para lectura
+                                        profunda. Elementos diseñados con glassmorphism sutil para sensación de
+                                        frescura.</p>
+                                </div>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>3. Redacción y Mensaje</h4>
+                                <div class="badge">Prompt del Usuario</div>
+                                <p class="prompt-text">"Actúa como un Copywriter especializado en comunicación
+                                    ambiental. Escribe los textos principales para la landing page. El tono debe ser
+                                    motivador, directo y libre de culpas, enfocándose en la 'Transformación Urbana'.
+                                    Crea un H1 (título principal) potente, una breve explicación de la misión del sitio
+                                    y 3 micro-copys para botones de acción (CTAs) que inviten a la participación activa
+                                    en el reciclaje local."</p>
+                                <div class="badge bg-green-light mt-2">Respuesta IA</div>
+                                <div class="response-text">
+                                    <p>El enfoque fue 'Transformación Urbana' libre de culpas. H1: "Transforma tus
+                                        residuos. Transforma tu ciudad." CTAs generados: "Ubicar Puntos Limpios",
+                                        "Aprender a Clasificar" y "Sumarme al Impacto".</p>
+                                </div>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>4. Estrategia de Redes</h4>
+                                <div class="badge">Prompt del Usuario</div>
+                                <p class="prompt-text">"Actúa como un Social Media Manager para una iniciativa de
+                                    Eco-Urbanismo. Diseña una campaña de 4 publicaciones para el lanzamiento de la web.
+                                    Post 1: El problema de los residuos en nuestra ciudad (Conciencia).
+                                    Post 2: Presentación de la herramienta interactiva de la web (Utilidad).
+                                    Post 3: Detrás de escena: Cómo usamos IA para mejorar el reciclaje (Innovación).
+                                    Post 4: Llamado a la acción para unirse a la comunidad (Engagement). Incluye ganchos
+                                    visuales (Hooks) y una lista de hashtags."</p>
+                                <div class="badge bg-green-light mt-2">Respuesta IA</div>
+                                <div class="response-text">
+                                    <p>Se diseñó una estrategia Multi-Fase: Post 1 (Problema de residuos y solución
+                                        local), Post 2 (Herramienta interactiva de ubicación en 3 clics), Post 3 (Uso de
+                                        IA y diseño biófilo) y Post 4 (Llamado a la comunidad).</p>
+                                </div>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>5. Documentación y Sinergia</h4>
+                                <div class="badge">Prompt del Usuario</div>
+                                <p class="prompt-text">"Actúa como un Documentador de Proyectos Tecnológicos. Escribe
+                                    una introducción profesional para la sección 'IA Lab' de la web. El texto debe
+                                    explicar que este sitio no es solo una herramienta de reciclaje, sino el resultado
+                                    de un proyecto final de investigación explorando la sinergia entre creatividad
+                                    humana e IA."</p>
+                                <div class="badge bg-green-light mt-2">Respuesta IA</div>
+                                <div class="response-text">
+                                    <p>Se desarrolló una introducción reflexiva resaltando a la IA como catalizador que
+                                        asiste la empatía del diseño humano para lograr un impacto sociourbano masivo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña Imágenes -->
+                        <div class="tab-pane active" id="tab-imagenes">
+                            <h3>Catálogo Visual e Identidad</h3>
+                            <p class="tab-desc">A continuación se muestran los Prompts de Texto que resultaron en las
+                                imágenes que componen cada sección de esta página web, y el diseño del marco base de
+                                'Metamorfosis Urbana'.</p>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>1. Sección: HERO (La Portada)</h4>
+                                <div class="badge">A wide-angle, cinematic photograph...</div>
+                                <p class="prompt-text">"A wide-angle, cinematic photograph of a clean, state-of-the-art
+                                    urban recycling facility fully integrated into a modern city park. The building is
+                                    made of concrete and polished glass, featuring massive vertical gardens. Smart
+                                    sorting machines inside emit a subtle, neon lime-green glow. The atmosphere is
+                                    bright under warm, golden hour sunlight, emphasizing a perfect harmony between
+                                    technology and nature. White and light gray color palette with striking green
+                                    accents, 8k resolution."</p>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>2. Sección: PROCESO (Cómo funciona)</h4>
+                                <div class="badge">A creative, high-definition macro...</div>
+                                <p class="prompt-text">"A creative, high-definition macro close-up split composition. On
+                                    the left side, raw, crushed aluminum cans and plastic bottles lie on textured, raw
+                                    gray concrete. On the right side, pristine, uniform plastic pellets and clean metal
+                                    ingots are perfectly organized. A clean, subtle lime-green glowing line separates
+                                    the raw from the processed materials. Studio lighting, sharp focus, 4k resolution."
+                                </p>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>3. Sección: IMPACTO CIUDADANO (La Gente)</h4>
+                                <div class="badge">A candid, cheerful candid shot...</div>
+                                <p class="prompt-text">"A candid, cheerful candid shot of a young person in modern,
+                                    casual clothing (white and gray colors) interacting with a high-tech, digital
+                                    smart-recycling bin on a bustling city sidewalk. The person is smiling as they place
+                                    a bottle into the glowing green slot. The bin features an intuitive digital screen.
+                                    The background city is blurred (bokeh) with green streetlights and lush trees.
+                                    Crisp, clean, daylight photography."</p>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>4. Sección: PRODUCTOS (El resultado final)</h4>
+                                <div class="badge">A sleek, minimalist display...</div>
+                                <p class="prompt-text">"A sleek, minimalist display of high-design, industrial products
+                                    (like a contemporary chair or minimalist headphones) made entirely from recycled
+                                    urban materials. The items are light gray and white with subtle lime-green details.
+                                    They are arranged perfectly on a polished concrete pedestal inside a gallery-like
+                                    space. Diffused, soft white lighting from above, extremely sharp detail, showing the
+                                    unique recycled texture."</p>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>5. Sección: FUTURO (Visión a largo plazo)</h4>
+                                <div class="badge">A conceptual, optimistic illustration...</div>
+                                <p class="prompt-text">"A conceptual, optimistic illustration of a thriving circular
+                                    city. The urban landscape features futuristic buildings made of recycled components,
+                                    integrated green aerial pathways, and small, autonomous electric vehicles
+                                    transporting materials. Clean, graphic-novel style with a primary palette of cool
+                                    gray concrete and vibrant lime-green energy lines. Wide shot, soft morning light,
+                                    cinematic atmosphere."</p>
+                            </div>
+
+                            <div class="prompt-response-card mt-3">
+                                <h4>6. Identidad Musical y Diseño del Sistema</h4>
+                                <div class="badge">Musicc</div>
+                                <p class="prompt-text">"Create a comprehensive design system identity for an urban
+                                    recycling portfolio named 'Metamorfosis Urbana'. The aesthetic must bridge raw city
+                                    industrialism with clean, futuristic technology."</p>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña Audio -->
+                        <div class="tab-pane" id="tab-audio">
+                            <div class="empty-state">
+                                <i data-lucide="music" class="empty-icon"></i>
+                                <h3>Sección de Audio</h3>
+                                <div class="audio-player-container mt-3 mb-4">
+                                    <audio controls>
+                                        <source src="audio/reciclar.mp3" type="audio/mpeg">
+                                        Tu navegador no soporta el elemento de audio.
+                                    </audio>
+                                </div>
+                                <p><strong>Prompt:</strong> Style: Acoustic Pop Rock, Upbeat, Organic Instrumentation,
+                                    Strummed Acoustic Guitar, Clean Electric Guitar Melodies, Mid-tempo 4/4, Warm Male
+                                    Vocals, Positive, Inspiring, Anthemic, Soft Percussion.</p>
+                                <div class="lyrics-box mt-3"
+                                    style="text-align: left; background: #f8f8f8; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+                                    <p><strong>Lyrics:</strong><br><br>
+                                        [Intro: Acoustic guitar strumming with clean electric lead]<br><br>
+                                        [Verse 1]<br>
+                                        Vivimos en ciudades que generan toneladas de residuos<br>
+                                        Todos los días<br>
+                                        El reciclaje urbano es una acción simple que tiene<br>
+                                        Un impacto enorme en nuestro entorno<br><br>
+                                        [Pre-Chorus]<br>
+                                        Cuando separamos los residuos reducimos la contaminación<br>
+                                        Cuidamos los recursos naturales y mejoramos la calidad<br>
+                                        De vida en nuestras ciudades<br><br>
+                                        [Chorus]<br>
+                                        Porque separar hoy es elegir un mejor mañana<br>
+                                        El cambio empieza en casa<br>
+                                        Pero se logra en comunidad<br><br>
+                                        [Guitar Solo: Melodic and bright electric guitar]<br><br>
+                                        [Outro]<br>
+                                        [Final acoustic chord]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i data-lucide="leaf"></i>
+                    <span>MetamorfosisUrbana</span>
+                </div>
+                <p>Transformando la gestión de residuos en nuestra ciudad mediante tecnología e innovación comunitaria y
+                    diseño futurista.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Plataforma</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#proceso">Proceso</a>
+                    <a href="#mapa">Mapa</a>
+                    <a href="#productos">Productos</a>
+                </div>
+                <div class="link-group">
+                    <h4>Proyecto</h4>
+                    <a href="#documentacion">IA Lab</a>
+                    <a href="#comunidad">Comunidad</a>
+                    <a href="#futuro">Futuro</a>
+                </div>
+                <div class="link-group">
+                    <h4>Redes Sociales</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Metamorfosis Urbana | Proyecto Final IA Lab</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
